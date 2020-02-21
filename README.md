@@ -52,6 +52,33 @@ Hasil dari program adalah sebagai berikut :
 ![Untitled_sisop1](https://user-images.githubusercontent.com/57068224/75025949-a49d7480-54ce-11ea-9dca-d4d1c1962019.png)
 
 # Soal Nomor 2
-Bagian A dan B Source Code : [nomor2a2b.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/Nomor2a2b.sh)
 Bagian C Source Code :[dekripsi.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/dekripsi.sh)
 Bagian D Source Code :[enkripsi.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/enkripsi.sh)
+
+# Bagian A dan B
+Source Code : [nomor2a2b.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/Nomor2a2b.sh)
+
+`password=$(head /dev/urandom`
+// Untuk membuat random
+
+`| tr -dc A-Za-z0-9 |`
+// membuat karakter huruf besar,kecil , dan angka
+
+`head -c 28 | head -n 1)`
+// membuat karakter hanya sebatas 28 karakter
+
+```
+while true; do
+   read -r -p "Masukkan String: " nama
+   if [[ $nama =~ ^[A-Za-z]+$ ]];then
+      fname="$nama.txt"
+      echo "$password" > "$fname"
+      break
+   else
+      echo "nama file error."
+   fi
+done
+```
+Membuat kondisi agar nama file yang diinput hanya berupa alphabet dan berekstensi txt . Apabila tidak memenuhi akan terjadi peringatan error dan kembali memasukkan nama strring. jika memenuhi akan langsung tercipta file dan berisi password acak 28 karakter
+
+# Bagian C
