@@ -1,7 +1,7 @@
 # SoalShiftSISOP20_modul1_A01
 
 Mochamad Haikal Ghiffari -  05111840000095
-Nikodemus Siahaan - 05111840000
+Nikodemus Siahaan - 05111840000151
 
 #Soal Nomor 1
 Source code : [soal1.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal1/soal1.sh)
@@ -50,3 +50,5 @@ value dalam Column State dengan Region Central
 
 Hasil dari program adalah sebagai berikut :
 ![Untitled_sisop1](https://user-images.githubusercontent.com/57068224/75025949-a49d7480-54ce-11ea-9dca-d4d1c1962019.png)
+
+2.
