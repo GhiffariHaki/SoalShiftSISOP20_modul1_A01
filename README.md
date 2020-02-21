@@ -126,3 +126,33 @@ down=`chr $key2`
 ->setelah=`printf "$sebelum" | tr b-zaB-ZA $up-za-$down${up^^}-ZA-${down^^}`
 mv $sebelum.txt $setelah.txt
 //Setiap huruf dalam sebelum akan dibaca dan terjadi pergantian huruf sesuai dengan format translate (b-zaB-ZA) yang sudah diganti dengan hasil dari up dan down sesuai dengan format jam. Hasilnya akan disimpan di variabel 'setelah' dan hasil enkripsnya menjadi di 'setelah'
+
+# Bagian D
+```
+#!/bin/bash
+
+sebelum="${1%.*}"
+
+change=`stat --printf="%z" $sebelum.txt`
+
+time=`echo "$change" | awk -F ' ' '{ print $2 }'`
+
+hour=`echo "$time" | awk -F ':' '{ print $1 }'`
+
+key1=`expr $hour + 98`
+key2=`expr $hour + 97`
+
+chr() {
+  printf "\\$(printf '%03o' "$1")"
+}
+
+up=`chr $key1`
+down=`chr $key2`
+
+setelah=`printf "$sebelum" | tr $up-za-$down${up^^}-ZA-${down^^} b-zaB-ZA`
+
+mv $sebelum.txt $setelah.txt
+```
+//Variabel 'change' digunakan untuk menyimpan waktu last change pada file untuk mengetahui jam berapa nama file terakhir diganti
+//Variabel 'time' digunakan untuk mengambil jam dari variabel 'change' karena pada variabel tersebut terdapat informasi yang tidak diperlukan. Di-cut menggunakan awk dengan field separator ' ' dan diprint pada argumen 2.
+//Variabel 'hour' digunakan untuk mengambil jamnya saja pada variabel 'time' agar nama file bisa didekripsi.
