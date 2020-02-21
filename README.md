@@ -3,7 +3,7 @@
 Mochamad Haikal Ghiffari -  05111840000095
 Nikodemus Siahaan - 05111840000151
 
-#Soal Nomor 1
+# Soal Nomor 1
 Source code : [soal1.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal1/soal1.sh)
 
 A. Dalam Bagian ini, kami mencari Region dengan profit paling sedikit
@@ -51,4 +51,7 @@ value dalam Column State dengan Region Central
 Hasil dari program adalah sebagai berikut :
 ![Untitled_sisop1](https://user-images.githubusercontent.com/57068224/75025949-a49d7480-54ce-11ea-9dca-d4d1c1962019.png)
 
-2.
+# Soal Nomor 2
+Bagian A dan B Source Code : [nomor2a2b.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/Nomor2a2b.sh)
+Bagian C Source Code :[dekripsi.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/dekripsi.sh)
+Bagian D Source Code :[enkripsi.sh](https://github.com/GhiffariHaki/SoalShiftSISOP20_modul1_A01/blob/master/soal2/enkripsi.sh)
