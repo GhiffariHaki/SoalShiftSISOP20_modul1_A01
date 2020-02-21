@@ -1,4 +1,6 @@
-\#Soal Nomor 1.A
+#!/bin/bash
+
+#Soal Nomor 1.A
 echo "Region dengan profit paling sedikit adalah :"
 awk 'BEGIN{ FS = "\t" }{ZZZ[$13] += $(NF)}
 END{for(i in ZZZ) { print "-" i, ZZZ[i];}}' /home/haki/Downloads/Sample* | sort -n | head -1
