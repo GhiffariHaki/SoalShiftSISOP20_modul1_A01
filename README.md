@@ -82,3 +82,47 @@ done
 Membuat kondisi agar nama file yang diinput hanya berupa alphabet dan berekstensi txt . Apabila tidak memenuhi akan terjadi peringatan error dan kembali memasukkan nama strring. jika memenuhi akan langsung tercipta file dan berisi password acak 28 karakter
 
 # Bagian C
+konversi huruf (string manipulation) yang disesuaikan dengan jam(0-23) dibuatnya file tersebut dengan program terpisah.
+```
+#!/bin/bash
+
+sebelum="${1%.*}"
+
+hour=`date "+%H"`
+
+key1=`expr $hour + 98`
+key2=`expr $hour + 97`
+
+chr() {
+  printf "\\$(printf '%03o' "$1")"
+}
+
+up=`chr $key1`
+down=`chr $key2`
+
+setelah=`printf "$sebelum" | tr b-zaB-ZA $up-za-$down${up^^}-ZA-${down^^}`
+
+mv $sebelum.txt $setelah.txt
+```
+->  sebelum="${1%.*}"
+// agar .txt tidak ikut terenkripsi
+
+-> hour=`date "+%H"
+// untuk membuat variable hour dengan yg saat ini
+
+-> key1=`expr $hour + 98`
+key2=`expr $hour + 97
+//batas atas dan batas bawah pada saat translate
+
+->chr() {
+  printf "\\$(printf '%03o' "$1")"
+}
+// mengubah ASCI ke valuenya
+
+-> up=`chr $key1`
+down=`chr $key2`
+// untuk variabel up dan down
+
+->setelah=`printf "$sebelum" | tr b-zaB-ZA $up-za-$down${up^^}-ZA-${down^^}`
+mv $sebelum.txt $setelah.txt
+//Setiap huruf dalam sebelum akan dibaca dan terjadi pergantian huruf sesuai dengan format translate (b-zaB-ZA) yang sudah diganti dengan hasil dari up dan down sesuai dengan format jam. Hasilnya akan disimpan di variabel 'setelah' dan hasil enkripsnya menjadi di 'setelah'
